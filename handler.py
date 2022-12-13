@@ -1,6 +1,16 @@
 import time
 import os
 import json
+import boto3
+from aws_xray_sdk.core import xray_recorder
+from aws_xray_sdk.core import patch_all
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+patch_all()
+
+client = boto3.client('lambda')
+client.get_account_settings()
 
 def lambda_handler(event, context):   
     print("Lambda function ARN:", context.invoked_function_arn)
