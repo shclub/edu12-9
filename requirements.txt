@@ -1,4 +1,6 @@
 awslambdaric
+jsonpickle==1.3
+aws-xray-sdk==2.4.3
 Flask==2.1.3
 Flask-Cors==3.0.10
 #SQLAlchemy==1.4.39
