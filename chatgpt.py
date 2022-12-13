@@ -1,7 +1,7 @@
 import sqlalchemy as sql
 
 # Create a connection to the SQLite database
-engine = sql.create_engine('sqlite:///database.db')
+engine = sql.create_engine('sqlite:///example.db')
 
 # Define a function to perform CRUD operations on the database
 def crud(action, params):
@@ -17,8 +17,10 @@ def crud(action, params):
         # Execute the query and return the result
         return queries[action]()
 
-# Use the function to perform CRUD operations on the database
-crud('create', {'id': 1, 'field': 'value1'})
-crud('read', 1)
-crud('update', (1, 'value2'))
-crud('delete', 1)
+# Define the AWS Lambda handler function
+def lambda_handler(event, context):
+    # Use the CRUD function to perform operations on the database
+    crud('create', {'id': 1, 'field': 'value1'})
+    crud('read', 1)
+    crud('update', (1, 'value2'))
+    crud('delete', 1)
