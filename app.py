@@ -4,8 +4,8 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sys
 
-def handler(event, context):
-    return 'Hello from AWS Lambda using Python' + sys.version + '!'        
+# def handler(event, context):
+#    return 'Hello from AWS Lambda using Python' + sys.version + '!'        
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
