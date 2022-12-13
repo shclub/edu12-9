@@ -5,14 +5,17 @@ import boto3
 from aws_xray_sdk.core import xray_recorder
 from aws_xray_sdk.core import patch_all
 
-#logger = logging.getLogger()
-#logger.setLevel(logging.INFO)
-#patch_all()
+import logging
+
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
+patch_all()
 
 #client = boto3.client('lambda')
 #client.get_account_settings()
 
-def lambda_handler(event, context):   
+def lambda_handler(event, context): 
+    print(event);
     print("Lambda function ARN:", context.invoked_function_arn)
     print("CloudWatch log stream name:", context.log_stream_name)
     print("CloudWatch log group name:",  context.log_group_name)
