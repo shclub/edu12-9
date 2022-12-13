@@ -18,9 +18,9 @@ def crud(action, params):
         return queries[action]()
 
 # Define the AWS Lambda handler function
-def lambda_handler(event, context):
-    # Use the CRUD function to perform operations on the database
-    crud('create', {'id': 1, 'field': 'value1'})
-    crud('read', 1)
-    crud('update', (1, 'value2'))
-    crud('delete', 1)
+#def lambda_handler(event, context):
+#    # Use the CRUD function to perform operations on the database
+#    crud('create', {'id': 1, 'field': 'value1'})
+#    crud('read', 1)
+#    crud('update', (1, 'value2'))
+#    crud('delete', 1)
