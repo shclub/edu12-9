@@ -16,8 +16,6 @@ patch_all()
 
 def handler(event, context): 
     print(event)
-    body = event["body-json"]
-    print(body)
     print("Lambda function ARN:", context.invoked_function_arn)
     print("CloudWatch log stream name:", context.log_stream_name)
     print("CloudWatch log group name:",  context.log_group_name)
