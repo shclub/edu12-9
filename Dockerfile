@@ -7,8 +7,8 @@ COPY app.py ${LAMBDA_TASK_ROOT}
 # Install the function's dependencies using file requirements.txt
 # from your project folder.
 
-COPY requirements.txt  .
-RUN  pip3 install -r requirements.txt --target "${LAMBDA_TASK_ROOT}"
+# COPY requirements.txt  .
+RUN  pip install -r requirements.txt --target "${LAMBDA_TASK_ROOT}"
 
 ENV TZ Asia/Seoul
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
